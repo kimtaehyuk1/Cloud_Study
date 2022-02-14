@@ -26,4 +26,4 @@ curl ip주소
 파드들을 연결하면 이것들이 서비스를 통해서 파드들을 찾아가서 안전하게 동작 할 수 있다. 하지만 실제로는 노드포트라는 것을 통해서 노드에 접속해 파드위치한거 찾아가는 구조
 
 
-![](https://user-images.githubusercontent.com/67897827/153913207-643ea55f-c163-41b4-ae84-f5f3ab11b665.PNG "링크 설명(title)을 작성하세요.")
+![](https://ifh.cc/g/QfV2as.jpg "링크 설명(title)을 작성하세요.")
