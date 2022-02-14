@@ -20,3 +20,5 @@ RANCHER나 OPENSHIFT 설치할수 있도록 패키지화 시켜놈
 필요에 따라서는 스크립트 돌려서 쿠버네티스 환경세팅
 
 그다음으로 설치한 쿠버네티스 랩을 쉽게 접근하기 위한 터미널 구성하기
+
+![쿠버네티스 readme md](https://user-images.githubusercontent.com/67897827/153819449-5ccf0703-0170-4f3e-b799-ec0d7530c3b6.PNG)
