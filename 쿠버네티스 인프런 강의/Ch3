@@ -21,4 +21,32 @@ kubectl get services
 -디플로이먼트를 로드밸런서로 배포
 
 우선 로드밸런서 타입으로 배포할수 있는 파일형태인 MetalLB를 먼저 설치
-kubectl apply -f ~/
+kubectl apply -f ~/_Lecture_k8s_starter.kit/ch2/2.4/metallb.yaml 
+
+kubectl create deployment chk-hn --image=sysnet4admin/chk-hn
+
+다시 chk-hn으로 배포
+
+kubectl get pods로 확인
+
+이제 로드 밸런싱 타입으로 
+kubectl expose deployment chk-hn --type=LoadBalancer --port=80
+하고
+
+kubectl get services 로 확인하기
+이럼 외부ip에 ip주소 생겨있다.
+
+중간점검으로 서비스에 대해 더 쉽게 설명하자면 집에서 방을나와 어디로 가려면 무조건 거실을 통과해야 한다.
+그 거실같은 공간이 쿠버네티스에서 서비스라고 생각하면 된다. 다른 어떤 곳을 넘어가기위해 항상 거쳐야 하는 곳.
+
+-배포한것을 삭제해보자
+
+kubectl delete service chk-hn
+(서비스 삭제하기)
+
+kubectl delete deployment chk-hn
+(이건 디플로이 삭제하기)
+
+kubectl delete pod nginx
+(파드 삭제하기)
+
