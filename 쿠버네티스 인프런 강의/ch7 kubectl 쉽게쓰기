@@ -1,0 +1,19 @@
+- kubectl 을 <tab><tab>?? 할수 있게 자동완성되있다 배쉬에서
+- kubectl 자동완성 실습
+k띄고 탭탭 누르면 kubectl과 같이 뒤에 실행 할 수 있는 것들 나온다.
+
+-배시 셸에 별명 지어줄수 있다.
+-업그레이드 순서
+업그레이드 계획 수립 -> kubeadm 업그레이드(kubeadm upgrade plan 여기서 버젼 확인 또 yum list kubeadm --showduplicates하면 어디까지 올려지나 확인가능하고
+yum upgrade -y kubeadm-1.20.4 로 먼저 올려준다음 kubeadm upgrade apply 1.20.4 여기까지하면 최종은 안된거임
+-> kubelet 업그레이드( yum upgrade kubelet-1.20.4 -y 로 쿠버넷 버전자체 업그레이드 하고 systemctl restart kubelet 후 systemctl daemon-reload 하면 완성
+-> 업그레이드 완료 확인
+
+위는 마스터노드에서 이고, 워커노드에서는 쿠버넷만 업그레이드 해주고 다시시작
+
+-오브젝트에 있는 단축어
+nodes -> no
+pods -> po
+namespaces -> ns
+deployments -> deploy
+services -> svc
