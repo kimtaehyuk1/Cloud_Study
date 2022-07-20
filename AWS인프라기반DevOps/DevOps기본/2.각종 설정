@@ -1,0 +1,5 @@
+window powershell에서 wsl치면 윈도우에서 리눅스 환경을 이용할 수 있도록 하는 기술이다.
+
+파일 어딘는지 몰라서 찾다가 wsl로 우분투 들어간후 cd ~한후에 explorer.exe .로 파일을 찾았다
+
+AWS CLI를 쓰려면 AWS 액세스 키 발급(여기는 잘 안되서 넘어감)
