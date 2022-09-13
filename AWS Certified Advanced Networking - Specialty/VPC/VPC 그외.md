@@ -35,19 +35,13 @@ NAT Gateway
 • NAT Gateway 생성시 Elastic IP를 지정해야 하며 하나의 Elastic IP 주소만 NAT 게이트웨이에 연결 가능!!!!  
 • NAT 게이트웨이는 포트 1024 - 65535를 사용하므로 NACL 인바운드 트래픽에서 해당 포트가 허용되어 있어야 트래픽 수신가능  
 
+(실습)  
+NAT gateway 생성 -> 퍼블릭 서브넷에 연결유형 퍼블릭으로 탄력적 IP없으면 할당하기 -> 그다음에 프라이빗 서브넷 라우팅 테이블로 가서 라우팅 편집눌러서 0.0.0.0/0은
+NAT gateway로 가게 만들어주기 이렇게 하면됨!
 
+시험 나옴!! 겁나 중요!!
 
-
-
-
-
-
-
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/67897827/189825408-3db1383c-cee7-4a8d-9184-25d1e69da703.png)
 
 
 
