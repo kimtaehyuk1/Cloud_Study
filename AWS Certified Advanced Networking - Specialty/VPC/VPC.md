@@ -43,3 +43,40 @@ Security Group (보안 그룹)
 ![image](https://user-images.githubusercontent.com/67897827/189687897-09d4937c-22d6-47c4-b71a-59372aa3c794.png)
 
 그림에서 사용자가 인스턴스에서 요청을 전송한다는 뜻은 인스턴스에서 클라이언트로 나갈때 즉 아웃바운드로 나가면 들어올때 묻고 따지지 않는다는 내용
+
+Network Access Control List (NACL)  
+• 서브넷 내부와 외부의 트래픽을 제어하는 방화벽  
+• 서브넷 레벨의 연결 방화벽  
+• 하나의 NACL은 여러 서브넷과 연결 가능  
+• 하나의 서브넷은 하나의 NACL만 연결 가능  
+• NACL은 허용, 거부 규칙 모두 지정 가능  
+• NACL은 연결 상태를 추적하지 않는 상태 비저장 방화벽 (Stateless Firewall)  
+✓ 인바운드 트래픽에 대한 응답은 아웃바운드 트래픽 규칙을 따름  
+✓ 아웃바운드 트래픽에 대한 응답은 인바운드 트래픽 규칙을 따름  
+• EC2 웹서버 운영시 외부에서 Client가 접속 후 리턴 트래픽을 받을 때 NAT를 사용하므로 임시포트(ephemeral ports) 1024-65535를 사용  
+
+![image](https://user-images.githubusercontent.com/67897827/189816643-40ccabdd-5e58-4bd5-8513-4d5686a54663.png)
+
+
+디폴트 NACL 인바운드,아웃바운드 규칙은 기본적으로 모든 트래픽이 허용되어있다.
+
+![image](https://user-images.githubusercontent.com/67897827/189817539-baf36d09-63b5-4d4f-b932-c1877ea3a06a.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
