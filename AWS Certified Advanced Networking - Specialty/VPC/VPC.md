@@ -59,19 +59,9 @@ Network Access Control List (NACL)
 
 
 디폴트 NACL 인바운드,아웃바운드 규칙은 기본적으로 모든 트래픽이 허용되어있다.
+새로 NACL생성 하면 인바운드, 아웃바운드 모든 트래픽이 거부 되어있다.
 
 ![image](https://user-images.githubusercontent.com/67897827/189817539-baf36d09-63b5-4d4f-b932-c1877ea3a06a.png)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
