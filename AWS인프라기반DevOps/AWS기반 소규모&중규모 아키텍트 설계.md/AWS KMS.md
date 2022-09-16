@@ -41,3 +41,37 @@ Server-side 암호화
 팁! 회사들은 3중 방어체계이다 첫번째로 S3같은경우도 자체적으로 서버사이드에서 암호기능을 가지고 있다. 두번째 클라이언트 사이드에서 데이터를 data key로 암호화한다.
 세번째 data key도 CMK로 암호화한다.!!(이 말뜻이 이해가 되야됨!)
 
+
+(실습)  
+
+우선 KMS를 쓸려면 AWS Encryption SDK를 써야된다.
+
+AWS KMS 가서 키생성 -> 키유형은 대칭키(비대칭은 복잡해짐) 고급옵션은 KMS,단일리전 키 -> 레이블추가에서 별칭은 first-cmk 하고 다음 -> 키 관리 권한 정의는 IAM에 있는 
+것들인데 누구한테 관리자 권한을 부여할거냐? 다음 -> 사용자도 누가 사용할건지 고르기 다음 -> 검토단계는 손안대로 완료 -> 인스턴스 만들기 후 putty로 그 인스턴스 들어가기
+-> sudo apt update(업데이트하는거), sudo apt install awscli(cli까는거), aws configure(이건 KMS에서 키생성할때 관리자와 사용자 고른놈의 IAM ID와 시크릿키로하기 또 KMS에서
+고른 리전도 넣어주기) -> 그 다음으로 파이썬 깔기 sudo apt install python3-pip 그후 pip install aws-encrytion-sdk 쳐주기 -> vi main.py로 파일하나 만들거다.
+그다음 그 파일에 https://github.com/aws/aws-encryption-sdk-python 여기있는 내용 붙여줄건데(내가 깃허브에서 찾은거) 각각 내용설명은 영상보기
+
+
+(메모)
+사용자는 암호화된 데이터를 복호화만 시킬수 있고 관리자는 그거 외에 모든 권한을 다 가지고 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
