@@ -75,49 +75,29 @@ aws IAM 드가기 -> 왼쪽바에 사용자 드가기 사용자추가해서 이�
 
 
 
-
-
 옵션2.
 ![image](https://user-images.githubusercontent.com/67897827/180709641-bbee6831-6bc2-413d-9536-dd47c3a538aa.png)
 등록소에 저장하는거 까지는 똑같은데 여기서 빼서 배포를 하는 방식이 다르다 이전까지 배포할때 EC2서버를 만들어서 거기다가(EC2를 거쳐서 배포를 했는데)
 그 EC2가 빠지고 마치 ECS와 EC2를 동시에 활용하는것 같은 효과를 주는것이다.
 
-(AWS ECR에 우리가 이미지 업로드 한 이후 실습) -> ECS 클러스터(컨테이너들을 구분해주는 구분영역) 를 생성해줘야한다.(비슷한얘들끼리 묶어서) -> 네트워킹 전용(Fargate쓸거니까)
-->이름,vpc는생성안해도되고,컨테이너인사이트활성화체크->생성누르기
--> 작업(작업은 클러스터 내부에 있는 세부 행위인데, 작업안에 컨테이너가 있다.)생성 하기 위해 옆에 작업 정의 생성 -> FARGATE클릭 ->이름,작업크기정하기, 컨테이너 추가 눌러서
-이름, 이미지칸에는 우리가 이미 만들어논 ECR에서 이미지 URL따서 복붙,메모리제한 128, 포트매핑 8000,끝 -> 생성
--> 작업 실행 누르기 -> 시작유형 FARGATE,클러스터는 방금만들어논거,작업개수1,클러스터VPC는 기본적인거 서브넷도 있는거다누르기,보안그룹은 편집눌러서 인바운드8000허용식으로
-편집하고->작업실행
 
+여기 실습은 영상통해서 참고하기
 
 실습
 ![image](https://user-images.githubusercontent.com/67897827/180710228-e655cb3d-fac9-4c49-8698-ff5dd48b878e.png)
-전에 이미지를 만들었을때는 우리는 이미지가 두개여서 EC2안에서 docker-compose로 해서 만든후 nginx는 잔고가 선행되야 돌아가니까 docker-compose.yml에 depense on에 어쩌구
-했었는데 여기서 AWS Fargate를 활용하려면 AWS CLI를 통해서 만들어서 두 ECR 관계 규명후 AWS Fargate로 배포하는거
 
 
 
 
-※ AWS CLI
-- AWS 명령줄 인터페이스(CLI)는 AWS 서비스를 관리하는 통합 도구입니다. 도구 하나만
-다운로드하여 구성하면 여러 AWS 서비스를 명령줄에서 제어하고 스크립트를 통해
-자동화할 수 있습니다.(GUI를 하면 편하기는 한데 벙거롭다. 자동화를 못한다.)
-- AWS CLI는 Amazon S3에서 효율적으로 파일을 보내고 받을 수 있는 간단한 새 파일
-명령 세트를 제공합니다
+※ AWS CLI  
+- AWS 명령줄 인터페이스(CLI)는 AWS 서비스를 관리하는 통합 도구입니다. 도구 하나만다운로드하여 구성하면 여러 AWS 서비스를 명령줄에서 제어하고 스크립트를 통해
+자동화할 수 있습니다.(GUI를 하면 편하기는 한데 벙거롭다. 자동화를 못한다.)  
+- AWS CLI는 Amazon S3에서 효율적으로 파일을 보내고 받을 수 있는 간단한 새 파일명령 세트를 제공합니다  
 
-CLI 명령어(모르면 예를들어 ecr repository 생성 cli쳐서 문서 찾아보기)
-ECS에서 레포지토리 생성하는 명령어 
-aws ecr create-repository --repository-name hello-cli --region us-east-2
-클러스터 생성부터 작업 생성의 CLI는 (영상참조) https://docs.aws.amazon.com/ko_kr/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html 여기 참조해서 따라하기
-
-
-
-
-
-
-
-
-
+CLI 명령어(모르면 예를들어 ecr repository 생성 cli쳐서 문서 찾아보기)  
+ECS에서 레포지토리 생성하는 명령어  
+aws ecr create-repository --repository-name hello-cli --region us-east-2  
+클러스터 생성부터 작업 생성의 CLI는 (영상참조) https://docs.aws.amazon.com/ko_kr/AmazonECS/latest/developerguide/ECS_AWSCLI_Fargate.html 여기 참조해서 따라하기  
 
 
 
