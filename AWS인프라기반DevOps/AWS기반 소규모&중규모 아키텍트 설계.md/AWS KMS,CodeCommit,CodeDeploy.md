@@ -69,14 +69,17 @@ git부분에 보면 자격증명생성해서 다운로드 해놓기 -> EC2하나
 창으로가서 git clone (아까 HTTPS 붙여놓은거) 이거하면 아마 user name과 패스워드 치라고 나오는데 그때 다운받았던거 쳐주면 된다. 그후에 cd fastrepo로 들어가기 vi test.txt 만들고 안에서 hello라고 치기 후 git config --local user.name "hyuk", git config --local user.email 98taehyukkim@naver.com (이 둘은 어떤 유저가 했는지에대한 증명) -> 후 git add . (현재 디렉토리에 있는 변경된거 codecommit에 추가) 후 git commit -m "test.txt" 후에 git push -u origin 쳐주고 또 다운받은 ID,비번 쳐주면된다.
 
 
+## AWS CodeDeploy
 
+![image](https://user-images.githubusercontent.com/67897827/190844044-53064617-d1c4-4c3c-b08b-acac31d927e9.png)
+배포 자동화 해주는거
 
+만약 코드에 문제점이 생겼다. 그럼 문제점 수정하고 배포하는데 까지 시간이 걸리는데 CodeDeploy사용하면 무정지 즉 실제 서버 사용하는 유저가 꺼지지 않고 다시 배포될수 있는
 
+![image](https://user-images.githubusercontent.com/67897827/190844061-8c1625f5-14cd-4da4-ae40-02733fb587f3.png)
 
-
-
-
-
+그림에서와 같이 1. Comput platform은 앞선 그림과 같이 EC2,온프레미스,Lambda,ECS통해 배포할거냐 2. Deployment Types&Groups 이건 로드밸런싱 대상그룹처럼 배포그룹이다.
+3. IAM & Service Role은 그냥 권한 설정 
 
 
 
